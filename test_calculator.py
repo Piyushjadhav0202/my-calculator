@@ -1,11 +1,13 @@
-def multiply(a, b):
-    return a * b
+from calculator import multiply, divide
 
-def divide(a, b):
-    if b == 0:
-        return "Cannot divide by zero"
-    return a / b
+def test_multiply():
+    assert multiply(3, 4) == 12
+    print("multiply test passed!")
 
-print("Calculator is running!")
-print("3 x 4 =", multiply(3, 4))
-print("10 / 2 =", divide(10, 2))
+def test_divide():
+    assert divide(10, 2) == 5.0
+    print("divide test passed!")
+
+def test_divide_by_zero():
+    assert divide(5, 0) == "Cannot divide by zero"
+    print("divide by zero test passed!")
